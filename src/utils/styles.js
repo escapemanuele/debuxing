@@ -1,9 +1,30 @@
 export const colors = {
   mainWhite: `#fff`,
-  mainBlack: `#262626`,
+  mainBlack: `#1c1c1c`,
   mainYellow: `#d2aa5c`,
   mainYellow2: `#F2AF29`,
   mainGrey: `#474747`,
+  mainBlue: `#1a9cfc`
+}
+export const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+
+export const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`
 }
 export const textSlanted = `font-family:'Caveat', cursive;`
 

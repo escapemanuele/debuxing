@@ -4,22 +4,27 @@ import SEO from '../components/seo'
 import {Link, graphql, useStaticQuery} from 'gatsby'
 import { Section } from '../utils';
 
-const CategoryTemplate = () => {
+const CategoryTemplate = ({data}) => {
 
-    const {data} = useStaticQuery(query)
-    console.log(data)
 
     return (
         <Layout>
             <SEO title={data.category.name} />
             <Section>
                 <h1>{data.category.name}</h1>
+                {
+                    data.posts.edges.map(({node}, index) => {
+                        return (
+                            <div key={index}>{node.slug}</div>
+                        )
+                    })
+                }
             </Section>
         </Layout>
     )
 }
 
-const query = graphql`
+export const query = graphql`
     query ($id: Int!){
         category:wordpressCategory(wordpress_id:{eq: $id}) {
             name

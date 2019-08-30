@@ -34,8 +34,7 @@ exports.createPages = async ({graphql, actions}) => {
         }
     `)
     
-        const posts = data.posts.edges
-        posts.forEach(post => {
+        data.posts.edges.forEach(post => {
             createPage({
                 path: `/${post.node.slug}`,
                 component: PostTemplate,
@@ -48,7 +47,7 @@ exports.createPages = async ({graphql, actions}) => {
         data.categories.edges.forEach(cat => {
             createPage({
                 path:`/${cat.node.slug}`,
-                component:CategoryTemplate,
+                component: CategoryTemplate,
                 context: {
                     id: cat.node.wordpress_id
                 }

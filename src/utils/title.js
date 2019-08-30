@@ -29,7 +29,7 @@ const TitleWrapper = styled.div`
     .underline {
         width: 5rem;
         height: 0.2rem;
-        background: ${styles.colors.mainYellow};
+        background: ${styles.colors.mainBlue};
         margin: 0.5rem auto;
     }
 `

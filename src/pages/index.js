@@ -1,18 +1,18 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {Header, Banner, BannerButton} from '../utils'
-import img from '../images/bcg/homeBcg.jpeg'
+import {Header, BannerImage, BannerButton} from '../utils'
 import LatestPosts from '../components/Blog/LatestPosts'
 import Categories from "../components/Blog/Categories";
 
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
-    <Header img={data.img.childImageSharp.fluid} big>
-      <Banner title="eatery" subtitle="55 main street. Santa Monica - California" >
+    <Header img={data.background.childImageSharp.fluid}>
+      <BannerImage img={data.bannerImage.childImageSharp.fluid} alt="Debuxing" />
+      {/*<Banner title="eatery" subtitle="55 main street. Santa Monica - California" >
         <BannerButton center>menu</BannerButton>
-      </Banner>
+</Banner>*/}
     </Header>
     <LatestPosts />
     <Categories />
@@ -21,7 +21,14 @@ const IndexPage = ({data}) => (
 
 export const query = graphql`
 {
-  img:file(relativePath:{eq:"bcg/homeBcg.jpeg"}) {
+  background:file(relativePath:{eq:"bcg/cover-debuxing.jpg"}) {
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  bannerImage:file(relativePath:{eq:"debuxing-logo.png"}) {
     childImageSharp {
       fluid {
         ...GatsbyImageSharpFluid

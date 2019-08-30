@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import {createGlobalStyle} from 'styled-components'
 import Navbar from "../components/Globals/Navbar/Navbar";
 import Footer from "./Globals/Footer";
+import {styles} from '../utils'
 
 const Layout = ({children}) => {
 
@@ -26,8 +27,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Open Sans', sans-serif;
-    color: #262626;
-    background: #fff;
+    color: #fff;
+    background: ${styles.colors.mainBlack};
   }
 `
 
