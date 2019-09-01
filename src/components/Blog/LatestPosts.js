@@ -1,5 +1,5 @@
 import React from 'react'
-import {graphql, useStaticQuery} from 'gatsby'
+import {Link, graphql, useStaticQuery} from 'gatsby'
 import { Section, Title, styles } from '../../utils';
 import PostCard from './PostCard';
 import styled from 'styled-components'
@@ -15,7 +15,9 @@ const LatestPosts = () => {
             {
                 posts.edges.map(({node}) => {
                     return (
+                      <Link to={`/${node.slug}`}>
                         <PostCard post={node} key={node.id} />
+                      </Link>
                     )
                 })
             }
@@ -52,6 +54,7 @@ export const query = graphql`
         id
         slug
         date(formatString:"MMMM Do, YYYY")
+        content
       }
     }
   }

@@ -6,6 +6,12 @@ export const colors = {
   mainGrey: `#474747`,
   mainBlue: `#1a9cfc`
 }
+
+export const shadows = {
+  lightShadow: `2px 5px 3px 0px rgba(0, 0, 0, 0.5)`,
+  darkShadow: `4px 10px 5px 0px rgba(0, 0, 0, 0.5)`
+}
+
 export const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -26,7 +32,7 @@ export const device = {
   desktop: `(min-width: ${size.desktop})`,
   desktopL: `(min-width: ${size.desktop})`
 }
-export const textSlanted = `font-family:'Caveat', cursive;`
+export const textSlanted = `font-family:'Open Sans', sans-serif;`
 
 export const transDefault = 'transition:all 0.5s ease-in-out'
 export const transFunction = (

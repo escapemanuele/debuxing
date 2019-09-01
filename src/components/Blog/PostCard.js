@@ -5,61 +5,55 @@ import {styles} from '../../utils'
 
 const PostCard = ({post}) => {
     return (
-        <PostCardWrapper >
-            <div className="svg-container post-svg svg-block">
+        <PostCardWrapper>
+            {/*<div className="svg-container post-svg svg-block">
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1950 150">
                     <g transform="translate(0,-902.36218)"></g>
                     <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
                     <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
                     <path d="M 0,150 0,0 1925,0"></path>
                 </svg>
-            </div>	
-            <div className="post-inner no-thumb">
+    </div>	*/}
+            <div className="post-inner">
                 <header className="entry-header">
-                    <h2 className="entry-title">
-                        <Link to={`/${post.slug}`} rel="bookmark">{post.title}</Link>
+                    <h2>
+                        <Link to={`/${post.slug}`} className="entry-title" rel="bookmark">{post.title}</Link>
                     </h2>
-                    <div className="entry-meta">
-                        <span className="posted-on">
-                            <a href="http://debuxing.com/sql-alter-column-size/" rel="bookmark">
-                                <time className="entry-date published updated" datetime="2018-11-07T16:31:25+00:00">November 7, 2018</time>
-                            </a>
-                        </span>
-                        <span className="byline"> 
-                            <span className="author vcard">
-                                <a className="url fn n" href="http://debuxing.com/author/koldand/">Emanuele Buccelli</a>
-                            </span>
-                        </span>
-                        <span className="cat-link">
-                            <a href="http://debuxing.com/category/programming/sql-programming/">SQL</a>
-                        </span>			
-                    </div>
                 </header>
-
-                <div className="entry-content">
-                    <p>It could happen that in your SQL Server Database you have to change the size of a column. To do that you can use the ALTER TABLE statement. The first thing you should know is[…]</p>
-                </div>
             </div>
-            <Link  className="read-more" to={`/${post.slug}`} >Continue reading …	</Link>
-
-            <div className="svg-container post-bottom-svg svg-block">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
-                    <g transform="translate(0,-902.36218)"></g>
-                    <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
-                    <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
-                    <path d="m 1925,0 0,150 -1925,0"></path>
-                </svg>
-            </div>	
         </PostCardWrapper>
     )
 }
 
 const PostCardWrapper = styled.article`
 
+    box-shadow: ${styles.shadows.lightShadow};
+    ${styles.transDefault};
+    height:100%;
+
+    &:hover {
+        box-shadow: ${styles.shadows.darkShadow};
+    }
 
     .post-inner {
         background: ${styles.colors.mainWhite};
+        height: 100%;
+
+        display:flex;
+        align-items: center;
+        &:hover {
+            background: ${styles.colors.mainBlue};
+        }
+    }
+
+    .entry-header {
+        text-align: center;
+        padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .entry-title {
+        text-decoration: none;
+        color: ${styles.colors.mainBlack};
     }
 
     .header-svg{
@@ -78,9 +72,7 @@ const PostCardWrapper = styled.article`
         width: 100%;
     }
 
-    .read-more {
-        background: ${styles.colors.mainBlue};
-    }
+    
 `
 
 export default PostCard

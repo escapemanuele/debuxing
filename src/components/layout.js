@@ -30,6 +30,10 @@ const GlobalStyle = createGlobalStyle`
     color: #fff;
     background: ${styles.colors.mainBlack};
   }
+
+  a {
+    text-decoration: none;
+  }
 `
 
 Layout.propTypes = {
