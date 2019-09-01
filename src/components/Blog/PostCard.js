@@ -41,6 +41,7 @@ const PostCardWrapper = styled.article`
 
         display:flex;
         align-items: center;
+        justify-content: center;
         &:hover {
             background: ${styles.colors.mainBlue};
         }
