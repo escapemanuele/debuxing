@@ -8,8 +8,8 @@ export const colors = {
 }
 
 export const shadows = {
-  lightShadow: `2px 5px 3px 0px rgba(0, 0, 0, 0.5)`,
-  darkShadow: `4px 10px 5px 0px rgba(0, 0, 0, 0.5)`
+  lightShadow: `4px 10px 6px 0px rgba(0, 0, 0, 0.5)`,
+  darkShadow: `8px 20px 10px 0px rgba(0, 0, 0, 0.5)`
 }
 
 export const size = {

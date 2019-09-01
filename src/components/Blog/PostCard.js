@@ -49,7 +49,13 @@ const PostCardWrapper = styled.article`
 
     .entry-header {
         text-align: center;
-        padding: 2rem 1.5rem 1.5rem;
+        padding: 1rem 0.8rem 0.8rem;
+    }
+
+    @media (${styles.device.tablet}){
+        .entry header {
+            padding: 2rem 1.5rem 1.5rem;
+        }
     }
 
     .entry-title {
