@@ -43,6 +43,8 @@ const PostWrapper = styled.div`
             width:100%;
             background-color: ${styles.codeColorer.codeColorerBackground};
             border: ${styles.codeColorer.codeColorerBorder};
+            margin-top: 2rem;
+            margin-bottom: 1.2rem;
         }
         .codecolorer {
             padding: 1rem;
@@ -60,6 +62,7 @@ const PostWrapper = styled.div`
         @media (${styles.device.tablet}) {
             .aligncenter {
                 margin: auto;
+                margin-top: 2rem;
             }
         }
     }
