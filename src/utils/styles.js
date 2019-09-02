@@ -4,7 +4,12 @@ export const colors = {
   mainYellow: `#d2aa5c`,
   mainYellow2: `#F2AF29`,
   mainGrey: `#474747`,
-  mainBlue: `#1a9cfc`
+  mainBlue: `#1a9cfc`,
+}
+
+export const codeColorer = {
+  codeColorerBackground: `#F1F1F1`,
+  codeColorerBorder: `1px solid #9F9F9F`
 }
 
 export const shadows = {

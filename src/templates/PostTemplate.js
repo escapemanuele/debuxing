@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import {graphql} from 'gatsby'
-import { Section, styles, ObliqueBorder, Header, Banner } from '../utils'
+import { Section, styles, ObliqueBorder, Header, Banner, Title } from '../utils'
 import styled from 'styled-components'
 
 const PostTemplate = ({data}) => {
@@ -15,8 +15,8 @@ const PostTemplate = ({data}) => {
             <Section>
             <ObliqueBorder />
                 <PostWrapper>
-                    <h1 className="title">{data.post.title}</h1>
-                    <div dangerouslySetInnerHTML={{ __html: data.post.content}} />
+                    <Title title={data.post.title} className="title" />
+                    <div className="content" dangerouslySetInnerHTML={{ __html: data.post.content}} />
                 </PostWrapper>
             </Section>
         </Layout>
@@ -30,9 +30,44 @@ const PostWrapper = styled.div`
     padding: 6rem 2rem;;
 
     .title {
-        margin-bottom: 3rem;
-        text-align: center;
-        font-size: 2rem;
+        font-weight: normal;
+    }
+
+    .content {
+        width: 80vw;
+        margin: 0 auto;
+        margin-top: 3rem;
+
+        .codecolorer-container {
+            white-space: nowrap;
+            width:100%;
+            background-color: ${styles.codeColorer.codeColorerBackground};
+            border: ${styles.codeColorer.codeColorerBorder};
+        }
+        .codecolorer {
+            padding: 1rem;
+            text-align:left;
+        }
+
+        .aligncenter {
+            display: block;
+            clear: both;
+            margin: 0;
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (${styles.device.tablet}) {
+            .aligncenter {
+                margin: auto;
+            }
+        }
+    }
+
+    @media (${styles.device.tablet}) {
+        .content {
+            width: 60vw;
+        }
     }
 `
 

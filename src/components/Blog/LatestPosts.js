@@ -20,11 +20,11 @@ export const query = graphql`
   posts:allWordpressPost( limit:6, sort:{fields: date,order:DESC}){
     edges {
       node {
-        
         id
         slug
         date(formatString:"MMMM Do, YYYY")
         content
+        title
       }
     }
   }
