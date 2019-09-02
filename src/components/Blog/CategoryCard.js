@@ -61,6 +61,11 @@ const CategoryCardWrapper = styled.article`
     .entry-title {
         text-decoration: none;
         color: ${styles.colors.mainBlack};
+        font-size: 1.5rem;
+    }
+
+    .post-inner:hover .entry-title {
+        color: ${styles.colors.mainWhite};
     }
 
     .header-svg{

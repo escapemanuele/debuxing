@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {styles} from '../../utils'
 
-const PostCard = ({post}) => {
+const PostCard = ({title}) => {
     return (
         <PostCardWrapper>
             {/*<div className="svg-container post-svg svg-block">
@@ -16,7 +16,7 @@ const PostCard = ({post}) => {
             <div className="post-inner">
                 <header className="entry-header">
                     <h2 className="entry-title">
-                        {post.title}
+                        {title}
                     </h2>
                 </header>
             </div>
@@ -60,6 +60,11 @@ const PostCardWrapper = styled.article`
     .entry-title {
         text-decoration: none;
         color: ${styles.colors.mainBlack};
+        font-size: 1.3rem;
+    }
+
+    .post-inner:hover .entry-title {
+        color: ${styles.colors.mainWhite};
     }
 
     .header-svg{

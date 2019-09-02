@@ -3,6 +3,7 @@ import {Link, graphql, useStaticQuery} from 'gatsby'
 import { Section, Title } from '../../utils';
 import CategoryCard from './CategoryCard';
 import styled from 'styled-components'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const Categories = () => {
 
@@ -15,9 +16,9 @@ const Categories = () => {
             {
                 cats.edges.map(({node}) => {
                     return (
-                        <Link key={node.id} to={`/${node.slug}`}>
+                        <AniLink fade key={node.id} to={`/${node.slug}`}>
                             <CategoryCard  category={node} />
-                        </Link>
+                        </AniLink>
                     )
                 })
             }

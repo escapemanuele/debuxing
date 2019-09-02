@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import {Link, graphql, useStaticQuery} from 'gatsby'
-import { Section, Header, Banner, ObliqueBorder, styles } from '../utils';
+import {graphql} from 'gatsby'
+import { Section, Header, Banner, Title, styles } from '../utils';
 import styled from 'styled-components'
 import PostList from '../components/Blog/PostList';
 
@@ -16,6 +16,7 @@ const CategoryTemplate = ({data}) => {
                 <Banner title={data.category.name} />
             </Header>
             <Section>
+                    <Title title="Articles" />
                     <PostList posts={data.posts.edges} />
             </Section>
         </Layout>

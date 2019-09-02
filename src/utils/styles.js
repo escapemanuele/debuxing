@@ -5,6 +5,7 @@ export const colors = {
   mainYellow2: `#F2AF29`,
   mainGrey: `#474747`,
   mainBlue: `#1a9cfc`,
+  darkGrey: `#afafaf`,
 }
 
 export const codeColorer = {

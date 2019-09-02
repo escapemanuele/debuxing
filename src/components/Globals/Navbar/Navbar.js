@@ -16,7 +16,7 @@ const Navbar = () => {
         <NavWrapper>
             <NavbarHeader handleNavbar={handleNavbar} />
             <NavbarLinks navbarOpen={navbarOpen} />
-            <NavbarIcons />
+            {/*<NavbarIcons />*/}
         </NavWrapper>
     )
 }

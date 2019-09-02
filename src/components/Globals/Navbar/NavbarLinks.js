@@ -30,16 +30,11 @@ const menuLinks = [
     },
     {
         id: 1,
-        path:'/about/',
-        name:'about'
+        path:'/blog',
+        name: 'blog'
     },
     {
         id: 2,
-        path:'/blog/',
-        name:'blog'
-    },
-    {
-        id: 3,
         path:'/contact',
         name:'contact'
     },
@@ -53,14 +48,14 @@ const LinkWrapper = styled.ul`
         display:block;
         text-decoration: none;
         padding: 0.5rem 1rem;
-        color: ${styles.colors.mainGrey};
+        color: ${styles.colors.mainWhite};
         font-weight: 700;
         text-transform: capitalize;
         cursor: pointer;
         ${styles.transDefault};
         &:hover{
-            background: ${styles.colors.mainGrey};
-            color: ${styles.colors.mainYellow};
+            background: ${styles.colors.mainBlue};
+            color: ${styles.colors.mainWhite};
             padding: 0.5rem 1rem 0.5rem 1.3rem;
         }
     }
@@ -75,7 +70,6 @@ const LinkWrapper = styled.ul`
         height: auto;
 
         .nav-link:hover {
-            background: ${styles.colors.mainWhite};
             padding: 0.5rem 1rem 0.5rem 1rem;
         }
     }

@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import {Header, BannerImage, BannerButton} from '../utils'
 import LatestPosts from '../components/Blog/LatestPosts'
 import Categories from "../components/Blog/Categories";
+import { Link } from "gatsby";
 
 const IndexPage = ({data}) => (
   <Layout>
@@ -15,6 +16,9 @@ const IndexPage = ({data}) => (
 </Banner>*/}
     </Header>
     <LatestPosts />
+    <div >
+      <Link to="/blog">All posts</Link>
+    </div>
     <Categories />
   </Layout>
 )

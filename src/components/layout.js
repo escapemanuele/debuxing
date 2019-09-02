@@ -40,6 +40,15 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     font-size: 2.3rem;
   }
+
+  form-control, .submit {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--darkGrey);
+    border-radius: 0.25rem;
+  }
 `
 
 Layout.propTypes = {
