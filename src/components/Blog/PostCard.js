@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'gatsby'
 import styled from 'styled-components'
 import {styles} from '../../utils'
 
@@ -16,8 +15,8 @@ const PostCard = ({post}) => {
     </div>	*/}
             <div className="post-inner">
                 <header className="entry-header">
-                    <h2>
-                        <Link to={`/${post.slug}`} className="entry-title" rel="bookmark">{post.title}</Link>
+                    <h2 className="entry-title">
+                        {post.title}
                     </h2>
                 </header>
             </div>

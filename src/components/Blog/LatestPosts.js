@@ -15,8 +15,8 @@ const LatestPosts = () => {
             {
                 posts.edges.map(({node}) => {
                     return (
-                      <Link to={`/${node.slug}`}>
-                        <PostCard post={node} key={node.id} />
+                      <Link to={`/${node.slug}`} key={node.id}>
+                        <PostCard post={node}  />
                       </Link>
                     )
                 })
