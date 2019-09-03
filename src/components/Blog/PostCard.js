@@ -5,14 +5,6 @@ import {styles} from '../../utils'
 const PostCard = ({title}) => {
     return (
         <PostCardWrapper>
-            {/*<div className="svg-container post-svg svg-block">
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1950 150">
-                    <g transform="translate(0,-902.36218)"></g>
-                    <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
-                    <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
-                    <path d="M 0,150 0,0 1925,0"></path>
-                </svg>
-    </div>	*/}
             <div className="post-inner">
                 <header className="entry-header">
                     <h2 className="entry-title">
@@ -28,8 +20,8 @@ const PostCardWrapper = styled.article`
 
     box-shadow: ${styles.shadows.lightShadow};
     ${styles.transDefault};
-    height:100%;
-
+    height: 100%;
+    
     &:hover {
         box-shadow: ${styles.shadows.darkShadow};
     }
@@ -51,18 +43,23 @@ const PostCardWrapper = styled.article`
         padding: 1rem 0.8rem 0.8rem;
     }
 
-    @media (${styles.device.tablet}){
-        .entry header {
-            padding: 2rem 1.5rem 1.5rem;
-        }
-    }
-
     .entry-title {
         text-decoration: none;
         color: ${styles.colors.mainBlack};
-        font-size: 1.3rem;
+        font-size: 1.0rem;
     }
 
+    @media (min-width: ${styles.size.tablet}){
+        .entry-header {
+            padding: 1.2rem;
+        }
+
+        .entry-title {
+            font-size: 1.5rem;
+        }
+    }
+
+    
     .post-inner:hover .entry-title {
         color: ${styles.colors.mainWhite};
     }

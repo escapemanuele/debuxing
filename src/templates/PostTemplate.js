@@ -2,8 +2,9 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import {graphql} from 'gatsby'
-import { Section, styles, ObliqueBorder, Header, Banner, Title } from '../utils'
+import { SectionSidebar, styles, Header, Banner, Title } from '../utils'
 import styled from 'styled-components'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const PostTemplate = ({data}) => {
     return (
@@ -12,13 +13,24 @@ const PostTemplate = ({data}) => {
             <Header img={data.background.childImageSharp.fluid}>
                 <Banner title={data.post.title} />
             </Header>
-            <Section>
-            <ObliqueBorder />
-                <PostWrapper>
+            <SectionSidebar>
+                <PostWrapper className="item-content">
                     <Title title={data.post.title} className="title" />
                     <div className="content" dangerouslySetInnerHTML={{ __html: data.post.content}} />
                 </PostWrapper>
-            </Section>
+                <AsideWrapper>
+                    <h3>Related</h3>
+                    {
+                        data.post.jetpack_related_posts.map((related,index) => {
+                            return (
+                                <AniLink className="aside-related" key={index} to={related.title}>
+                                    {related.title}
+                                </AniLink>
+                            )
+                        })
+                    }
+                </AsideWrapper>
+            </SectionSidebar>
         </Layout>
     )
 }
@@ -27,15 +39,14 @@ const PostWrapper = styled.div`
 
     background: ${styles.colors.mainWhite};
     color: ${styles.colors.mainBlack};
-    padding: 6rem 2rem;;
+    padding: 2rem;
+
 
     .title {
         font-weight: normal;
     }
 
     .content {
-        width: 80vw;
-        margin: 0 auto;
         margin-top: 3rem;
 
         .codecolorer-container {
@@ -66,10 +77,23 @@ const PostWrapper = styled.div`
             }
         }
     }
+`
 
-    @media (${styles.device.tablet}) {
-        .content {
-            width: 60vw;
+const AsideWrapper = styled.aside`
+
+    text-align: center;
+    
+    .aside-related {
+        display: block;
+        margin-bottom: 1.2rem;
+        padding: 0.8rem;
+        color: ${styles.colors.mainWhite};
+        border-radius: 0.5rem;
+        ${styles.border({color:`${styles.colors.mainBlue}`})};
+
+        &:hover {
+            background: ${styles.colors.mainBlue};
+            border-radius: 1rem;
         }
     }
 `
@@ -81,6 +105,10 @@ export const query = graphql`
             content
             author {
                 name
+            }
+            jetpack_related_posts {
+                title
+                url
             }
         }
         background:file(relativePath:{eq:"bcg/cover-debuxing.jpg"}) {

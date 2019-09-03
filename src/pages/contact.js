@@ -18,7 +18,7 @@ const ContactPage = ({data}) => (
 
 export const query = graphql`
 {
-  img:file(relativePath:{eq:"bcg/contactBcg.jpeg"}) {
+  img:file(relativePath:{eq:"bcg/cover-debuxing.jpg"}) {
     childImageSharp {
       fluid {
         ...GatsbyImageSharpFluid

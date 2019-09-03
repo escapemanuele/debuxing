@@ -11,14 +11,8 @@ const IndexPage = ({data}) => (
     <SEO title="Home" />
     <Header img={data.background.childImageSharp.fluid}>
       <BannerImage img={data.bannerImage.childImageSharp.fluid} alt="Debuxing" />
-      {/*<Banner title="eatery" subtitle="55 main street. Santa Monica - California" >
-        <BannerButton center>menu</BannerButton>
-</Banner>*/}
     </Header>
     <LatestPosts />
-    <div >
-      <Link to="/blog">All posts</Link>
-    </div>
     <Categories />
   </Layout>
 )
