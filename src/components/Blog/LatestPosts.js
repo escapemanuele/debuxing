@@ -12,17 +12,17 @@ const LatestPosts = () => {
     return (
         <Section>
             <Title title="latest blog posts" />
-            <PostList posts={posts.edges} />
             <LinkWrapper>
               <AniLink fade to="/blog" className="allPosts">All posts</AniLink>
             </LinkWrapper>
+            <PostList posts={posts.edges} />
         </Section>
     )
 }
 
 const LinkWrapper = styled.div`
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   .allPosts {
     ${styles.border({color: `${styles.colors.mainBlue}`})};
@@ -33,8 +33,7 @@ const LinkWrapper = styled.div`
 
     &:hover {
       background: ${styles.colors.mainBlue};
-      padding: 1.7rem;
-      font-size: 1.5rem;
+      border-radius: 1rem;
     }
   }
 `

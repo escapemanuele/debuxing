@@ -105,6 +105,10 @@ const AsideWrapper = styled.aside`
             border-radius: 1rem;
         }
     }
+
+    h3 {
+        text-transform: uppercase;
+    }
 `
 
 export const query = graphql`

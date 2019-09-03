@@ -3,6 +3,7 @@ module.exports = {
     title: `Debuxing`,
     description: `Debuxing: The answer to your programming problems`,
     author: `@escapemanuele`,
+    siteUrl: `https://www.debuxing.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
