@@ -32,7 +32,7 @@ const PostTemplate = ({data}) => {
                             const slug = getSlugFromUrl(related.url)
                             console.log(slug)
                             return (
-                                <AniLink className="aside-related" key={index} to={slug}>
+                                <AniLink className="aside-related" key={index} fade to={slug}>
                                     {related.title}
                                 </AniLink>
                             )

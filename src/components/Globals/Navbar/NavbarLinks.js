@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import {Link} from 'gatsby'
 import styled from 'styled-components'
 import {styles} from '../../../utils'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const NavbarLinks = ({navbarOpen}) => {
 
@@ -13,7 +13,7 @@ const NavbarLinks = ({navbarOpen}) => {
                 links.map((link) => {
                     return (
                         <li key={link.id}>
-                            <Link to={link.path} className="nav-link">{link.name}</Link>
+                            <AniLink fade to={link.path} className="nav-link">{link.name}</AniLink>
                         </li>
                     )
                 })

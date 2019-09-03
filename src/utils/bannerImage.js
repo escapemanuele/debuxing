@@ -1,15 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import {Link} from 'gatsby'
-import {styles} from '../utils'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const BannerImage = ({img, alt}) => {
     return (
         <BannerImageWrapper>
-            <Link to="/">
+            <AniLink fade to="/">
                 <Img fluid={img} alt={alt} className="image-header-banner" />
-            </Link>
+            </AniLink>
         </BannerImageWrapper>
     )
 }
