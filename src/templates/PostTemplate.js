@@ -7,6 +7,13 @@ import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const PostTemplate = ({data}) => {
+
+    const getSlugFromUrl = (address) => {
+        const url = new URL(address)
+        return url.pathname
+    }
+
+
     return (
         <Layout>
             <SEO title={data.post.title} />
@@ -22,8 +29,10 @@ const PostTemplate = ({data}) => {
                     <h3>Related</h3>
                     {
                         data.post.jetpack_related_posts.map((related,index) => {
+                            const slug = getSlugFromUrl(related.url)
+                            console.log(slug)
                             return (
-                                <AniLink className="aside-related" key={index} to={related.title}>
+                                <AniLink className="aside-related" key={index} to={slug}>
                                     {related.title}
                                 </AniLink>
                             )
@@ -40,7 +49,7 @@ const PostWrapper = styled.div`
     background: ${styles.colors.mainWhite};
     color: ${styles.colors.mainBlack};
     padding: 2rem;
-
+    overflow: hidden;
 
     .title {
         font-weight: normal;
@@ -62,7 +71,7 @@ const PostWrapper = styled.div`
             text-align:left;
         }
 
-        .aligncenter {
+        .aligncenter, img {
             display: block;
             clear: both;
             margin: 0;

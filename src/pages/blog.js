@@ -11,6 +11,7 @@ const Blog = ({data}) => {
     const [items, setItems] = useState(data.posts.edges)
     const [posts, setPosts] = useState(data.posts.edges)
 
+    const categories = ["all", ...data.categories.edges]
 
     const handleItems = (category) => {
         let tempItems = [...items]
