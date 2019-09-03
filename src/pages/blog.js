@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Layout from '../components/layout';
 import SEO from '../components/seo'
 import {Header, Banner, Title, styles} from '../utils'
@@ -11,7 +11,17 @@ const Blog = ({data}) => {
     const [items, setItems] = useState(data.posts.edges)
     const [posts, setPosts] = useState(data.posts.edges)
 
-    const categories = ["all", ...data.categories.edges]
+    const [categories, setCategories] = useState(['all'])
+
+    useEffect(() => {
+        let tempCategories = ['All']
+        data.categories.edges.forEach(({node}) => {
+            tempCategories.push(node.name)
+        })
+
+        setCategories(tempCategories)
+    }, [])
+
 
     const handleItems = (category) => {
         let tempItems = [...items]
@@ -23,9 +33,6 @@ const Blog = ({data}) => {
         }
     }
 
-    const handleSelect = (e) => {
-        console.log("SF", e)
-    }
 
     return (
         <Layout>
@@ -37,14 +44,14 @@ const Blog = ({data}) => {
             <CategoriesWrapper>
                 <div className="buttonList">
                 {
-                    data.categories.edges.map(({node}, index) => {
+                    categories.map((name, index) => {
                         return (
                             <button 
                                 type="button" 
                                 key={index} 
                                 className="button"
-                                onClick={() => handleItems(node.name)}>
-                                {node.name}
+                                onClick={() => handleItems(name)}>
+                                {name}
                             </button>
                         )
                     })
@@ -52,12 +59,12 @@ const Blog = ({data}) => {
                 </div>
                     <select className="buttonDropdown" onChange={(e) => handleItems(e.target.value)}>
                     {
-                        data.categories.edges.map(({node}, index) => {
+                        categories.map((name, index) => {
                             return (
                                 <option 
                                     key={index}
-                                    value={node.name}>
-                                    {node.name}
+                                    value={name}>
+                                    {name}
                                 </option>
                             )
                         })
