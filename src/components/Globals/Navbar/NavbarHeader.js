@@ -9,7 +9,7 @@ const NavbarHeader = ({handleNavbar}) => {
     return (
         <HeaderWrapper>
             <AniLink className="brandName" fade to="/">
-                DE<span>BUX</span>ING                
+                {`{`} DE<span>BUX</span>ING {`}`} 
             </AniLink>
             <FaAlignRight className="toggle-icon" onClick={() => handleNavbar()} />
         </HeaderWrapper>
@@ -24,7 +24,6 @@ const HeaderWrapper = styled.div`
     justify-content: space-between;
 
     .brandName {
-
         letter-spacing: 0.2rem;
         font-size: 2rem;
 
