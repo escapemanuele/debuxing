@@ -17,9 +17,13 @@ const BannerWrapper = styled.div`
     text-align: center;
     .title {
         color: ${styles.colors.mainWhite};
-        font-size: 3rem;
+        font-size: 1.5rem;
         text-transform: uppercase;
         ${styles.letterSpacing({spacing: '0.75rem'})};
+    }
+
+    @media(min-width:${styles.size.tablet}){
+        font-size: 3rem;
     }
 
     .subtitle {

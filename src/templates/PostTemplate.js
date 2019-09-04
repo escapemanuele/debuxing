@@ -29,7 +29,9 @@ const PostTemplate = ({data}) => {
             </Header>
             <SectionSidebar>
                 <PostWrapper className="item-content">
-                    <AniLink fade to="/blog" className="btn back">Back to articles</AniLink>
+                    <div className="back_container">
+                        <AniLink fade to="/blog" className="btn back">Back to articles</AniLink>
+                    </div>
                     <Title title={data.post.title} className="title" />
                     <div className="content" dangerouslySetInnerHTML={{ __html: data.post.content}} />
                     <LeaveComment />
@@ -62,6 +64,16 @@ const PostWrapper = styled.div`
     color: ${styles.colors.mainBlack};
     padding: 2rem;
     overflow: hidden;
+
+    .back_container {
+        text-align: center;
+    }
+
+    @media (min-width:${styles.size.tablet}) {
+        .back_container{
+            text-align: left;
+        }
+    }
 
     .back {
         ${styles.border({color: `${styles.colors.mainBlue}`})};

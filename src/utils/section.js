@@ -20,13 +20,15 @@ export const SectionSidebar = ({children}) => {
 const SidebarWrapper = styled.section`
     display: grid;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0.5rem;
 
     aside {
         display: none;
     }
     
     @media(min-width:${styles.size.tablet}) {
+        padding: 2rem;
+        
         grid-column-gap: 1.2rem;
         grid-template-areas:
         'content side';
