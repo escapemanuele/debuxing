@@ -25,7 +25,7 @@ const Blog = ({data}) => {
 
     const handleItems = (category) => {
         let tempItems = [...items]
-        if (category==="all") {
+        if (category==="All") {
            setPosts(tempItems)
         } else {
             let items = tempItems.filter(({node}) => node.categories.some(x => x.name===category))
@@ -86,6 +86,7 @@ const CategoriesWrapper = styled.div`
         background: transparent;
         color: ${styles.colors.mainWhite};
         margin: 1rem;
+        text-transform: uppercase;
         
         &:hover {
             background: ${styles.colors.mainBlue};

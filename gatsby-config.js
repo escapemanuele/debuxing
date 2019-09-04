@@ -1,3 +1,9 @@
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+
 module.exports = {
   siteMetadata: {
     title: `Debuxing`,
@@ -88,7 +94,7 @@ module.exports = {
         perPage: 100,
         // Search and Replace Urls across WordPress content.
         searchAndReplaceContentUrls: {
-          sourceUrl: "https://debugin.com",
+          sourceUrl: "https://admin-debuxing.000webhostapp.com",
           replacementUrl: "https://localhost:8000",
         },
         concurrentRequests: 10,

@@ -49,6 +49,17 @@ const GlobalStyle = createGlobalStyle`
     border: 1px solid var(--darkGrey);
     border-radius: 0.25rem;
   }
+
+  .btn {
+    text-transform: uppercase;
+    ${styles.transDefault};
+
+    &:hover {
+        background: ${styles.colors.mainBlue};
+        color: ${styles.colors.mainWhite};
+        border-radius: 1rem;
+    }
+  }
 `
 
 Layout.propTypes = {

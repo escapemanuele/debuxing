@@ -13,7 +13,7 @@ const LatestPosts = () => {
         <Section>
             <Title title="latest blog posts" />
             <LinkWrapper>
-              <AniLink fade to="/blog" className="allPosts">All posts</AniLink>
+              <AniLink fade to="/blog" className="btn allPosts">All posts</AniLink>
             </LinkWrapper>
             <PostList posts={posts.edges} />
         </Section>
@@ -29,12 +29,6 @@ const LinkWrapper = styled.div`
     padding: 1.5rem;
     font-size: 1.3rem;
     color: ${styles.colors.mainWhite};
-    ${styles.transDefault};
-
-    &:hover {
-      background: ${styles.colors.mainBlue};
-      border-radius: 1rem;
-    }
   }
 `
 

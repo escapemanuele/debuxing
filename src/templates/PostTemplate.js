@@ -22,6 +22,7 @@ const PostTemplate = ({data}) => {
             </Header>
             <SectionSidebar>
                 <PostWrapper className="item-content">
+                    <AniLink fade to="/blog" className="btn back">Back to articles</AniLink>
                     <Title title={data.post.title} className="title" />
                     <div className="content" dangerouslySetInnerHTML={{ __html: data.post.content}} />
                 </PostWrapper>
@@ -32,7 +33,7 @@ const PostTemplate = ({data}) => {
                             const slug = getSlugFromUrl(related.url)
                             console.log(slug)
                             return (
-                                <AniLink className="aside-related" key={index} fade to={slug}>
+                                <AniLink className="btn aside-related" key={index} fade to={slug}>
                                     {related.title}
                                 </AniLink>
                             )
@@ -50,6 +51,14 @@ const PostWrapper = styled.div`
     color: ${styles.colors.mainBlack};
     padding: 2rem;
     overflow: hidden;
+
+    .back {
+        ${styles.border({color: `${styles.colors.mainBlue}`})};
+        padding: 1rem;
+        margin-bottom: 2rem;
+        
+        display: inline-block;
+    }
 
     .title {
         font-weight: normal;
@@ -97,13 +106,7 @@ const AsideWrapper = styled.aside`
         margin-bottom: 1.2rem;
         padding: 0.8rem;
         color: ${styles.colors.mainWhite};
-        border-radius: 0.5rem;
         ${styles.border({color:`${styles.colors.mainBlue}`})};
-
-        &:hover {
-            background: ${styles.colors.mainBlue};
-            border-radius: 1rem;
-        }
     }
 
     h3 {
