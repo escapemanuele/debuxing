@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { Section, Title, styles } from '../../utils';
-import PostCard from './PostCard';
+import ElementCard from './ElementCard';
 import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
@@ -14,7 +13,7 @@ const PostList = ({posts}) => {
                 posts.map(({node}) => {
                     return (
                       <AniLink fade to={`/${node.slug}`} key={node.id}>
-                        <PostCard title={node.title}  />
+                        <ElementCard title={node.title}  />
                       </AniLink>
                     )
                 })

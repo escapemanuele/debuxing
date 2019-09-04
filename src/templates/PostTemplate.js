@@ -5,12 +5,19 @@ import {graphql} from 'gatsby'
 import { SectionSidebar, styles, Header, Banner, Title } from '../utils'
 import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import {DiscussionEmbed} from 'disqus-react'
+import LeaveComment from '../components/Globals/LeaveComment'
 
 const PostTemplate = ({data}) => {
 
     const getSlugFromUrl = (address) => {
         const url = new URL(address)
         return url.pathname
+    }
+
+    const disqusConfig = {
+        shortname: process.env.GATSBY_DISQUS_NAME,
+        config: {identifier: data.post.slug}
     }
 
 
@@ -25,6 +32,8 @@ const PostTemplate = ({data}) => {
                     <AniLink fade to="/blog" className="btn back">Back to articles</AniLink>
                     <Title title={data.post.title} className="title" />
                     <div className="content" dangerouslySetInnerHTML={{ __html: data.post.content}} />
+                    <LeaveComment />
+                    <DiscussionEmbed className="disqus-board" {...disqusConfig} />
                 </PostWrapper>
                 <AsideWrapper>
                     <h3>Related</h3>
@@ -45,6 +54,8 @@ const PostTemplate = ({data}) => {
     )
 }
 
+
+
 const PostWrapper = styled.div`
 
     background: ${styles.colors.mainWhite};
@@ -62,6 +73,10 @@ const PostWrapper = styled.div`
 
     .title {
         font-weight: normal;
+    }
+
+    #disqus_thread {
+        margin-top: 2rem;
     }
 
     .content {
@@ -117,6 +132,7 @@ const AsideWrapper = styled.aside`
 export const query = graphql`
     query ($id: Int!){
         post:wordpressPost(wordpress_id:{eq: $id}) {
+            slug
             title
             content
             author {
@@ -136,5 +152,7 @@ export const query = graphql`
         }
     }
 `
+
+
 
 export default PostTemplate

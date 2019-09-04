@@ -10,8 +10,8 @@ const Blog = ({data}) => {
 
     const [items, setItems] = useState(data.posts.edges)
     const [posts, setPosts] = useState(data.posts.edges)
-
-    const [categories, setCategories] = useState(['all'])
+    const [categories, setCategories] = useState([])
+    const [currentCategory, setCurrentCategory] = useState('All')
 
     useEffect(() => {
         let tempCategories = ['All']
@@ -31,6 +31,8 @@ const Blog = ({data}) => {
             let items = tempItems.filter(({node}) => node.categories.some(x => x.name===category))
             setPosts(items)
         }
+
+        setCurrentCategory(category)
     }
 
 
@@ -49,7 +51,7 @@ const Blog = ({data}) => {
                             <button 
                                 type="button" 
                                 key={index} 
-                                className="button"
+                                className={`btn button ${(name === currentCategory)? "active" : ""}`}
                                 onClick={() => handleItems(name)}>
                                 {name}
                             </button>
@@ -71,7 +73,7 @@ const Blog = ({data}) => {
                     }
                     </select>    
             </CategoriesWrapper>
-            <PostList  posts={posts} />
+            <PostList posts={posts} />
         </Layout>
     )
 }
@@ -91,6 +93,10 @@ const CategoriesWrapper = styled.div`
         &:hover {
             background: ${styles.colors.mainBlue};
         }
+    }
+
+    .active {
+        background: ${styles.colors.mainBlue};
     }
 
     .buttonList {

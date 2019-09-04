@@ -26,9 +26,15 @@ const LinkWrapper = styled.div`
 
   .allPosts {
     ${styles.border({color: `${styles.colors.mainBlue}`})};
-    padding: 1.5rem;
+    padding: 0.5rem;
     font-size: 1.3rem;
     color: ${styles.colors.mainWhite};
+  }
+
+  @media (min-width:${styles.size.tablet}) {
+    .allPosts {
+      padding: 1.5rem;
+    }
   }
 `
 

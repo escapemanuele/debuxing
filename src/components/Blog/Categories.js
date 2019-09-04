@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, graphql, useStaticQuery} from 'gatsby'
 import { Section, Title } from '../../utils';
-import CategoryCard from './CategoryCard';
+import ElementCard from './ElementCard';
 import styled from 'styled-components'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
@@ -17,7 +17,7 @@ const Categories = () => {
                 cats.edges.map(({node}) => {
                     return (
                         <AniLink fade key={node.id} to={`/${node.slug}`}>
-                            <CategoryCard  category={node} />
+                            <ElementCard title={node.name} />
                         </AniLink>
                     )
                 })
