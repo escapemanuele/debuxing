@@ -10,7 +10,7 @@ const ContactPage = ({data}) => (
   <Layout>
     <SEO title="Contact" />
     <Header img={data.img.childImageSharp.fluid}>
-      <Banner title="contact us" subtitle="anything.." />
+      <Banner title="contact us" subtitle="for anything" />
     </Header>
     <Contact />
   </Layout>

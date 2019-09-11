@@ -107,6 +107,7 @@ const PostWrapper = styled.div`
             text-align:left;
         }
 
+
         .aligncenter, img {
             display: block;
             clear: both;

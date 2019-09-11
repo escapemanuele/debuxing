@@ -23,7 +23,9 @@ const BannerWrapper = styled.div`
     }
 
     @media(min-width:${styles.size.tablet}){
-        font-size: 3rem;
+        .title {
+           font-size: 3rem;
+        }
     }
 
     .subtitle {

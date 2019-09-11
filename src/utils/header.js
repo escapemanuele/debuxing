@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {styles, ObliqueBorder} from '../utils'
+import {ObliqueBorder} from '../utils'
 import BackgroundImage from 'gatsby-background-image'
 
 const Header = ({img, big, children}) => {

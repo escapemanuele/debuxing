@@ -3,7 +3,6 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import {graphql} from 'gatsby'
 import { Section, Header, Banner, Title, styles } from '../utils';
-import styled from 'styled-components'
 import PostList from '../components/Blog/PostList';
 
 const CategoryTemplate = ({data}) => {
@@ -22,19 +21,6 @@ const CategoryTemplate = ({data}) => {
         </Layout>
     )
 }
-
-const CategoryWrapper = styled.div`
-
-    background: ${styles.colors.mainWhite};
-    color: ${styles.colors.mainBlack};
-    padding: 6rem 2rem;;
-
-    .title {
-        margin-bottom: 3rem;
-        text-align: center;
-        font-size: 2rem;
-    }
-`
 
 export const query = graphql`
     query ($id: Int!){

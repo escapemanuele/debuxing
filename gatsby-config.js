@@ -12,6 +12,7 @@ module.exports = {
     siteUrl: `https://www.debuxing.com`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
     {
