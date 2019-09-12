@@ -22,6 +22,7 @@ const Categories = () => {
                     )
                 })
             }
+            
             </CategoriesWrapper>
         </Section>
     )
