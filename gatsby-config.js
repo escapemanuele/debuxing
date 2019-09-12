@@ -93,11 +93,10 @@ module.exports = {
         cookies: {},
         verboseOutput: false,
         perPage: 100,
-        // Search and Replace Urls across WordPress content.
-        searchAndReplaceContentUrls: {
-          sourceUrl: "http://debuxing.tx7.fcomet.com/",
-          replacementUrl: "https://localhost:8000/",
-        },
+        //searchAndReplaceContentUrls: {
+          //sourceUrl: "http://debuxing.tx7.fcomet.com/",
+          //replacementUrl: "https://localhost:8000/",
+        //},
         concurrentRequests: 10,
         // Set WP REST API routes whitelists
         // and blacklists using glob patterns.
