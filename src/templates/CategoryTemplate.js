@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import {graphql} from 'gatsby'
-import { Section, Header, Banner, Title, styles } from '../utils';
+import { Section, Header, Banner, Title } from '../utils';
 import PostList from '../components/Blog/PostList';
 
 const CategoryTemplate = ({data}) => {

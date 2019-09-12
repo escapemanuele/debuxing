@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section, Title, styles } from '../../utils';
+import { Section } from '../../utils';
 import ElementCard from './ElementCard';
 import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'

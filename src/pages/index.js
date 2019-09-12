@@ -1,10 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {Header, BannerImage, BannerButton} from '../utils'
+import {Header, BannerImage} from '../utils'
 import LatestPosts from '../components/Blog/LatestPosts'
 import Categories from "../components/Blog/Categories";
-import { Link } from "gatsby";
 
 const IndexPage = ({data}) => (
   <Layout>

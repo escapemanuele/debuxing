@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import NavbarHeader from './NavbarHeader'
 import NavbarLinks from './NavbarLinks'
-import NavbarIcons from './NavbarIcons'
 import styled from 'styled-components'
 
 const Navbar = () => {
