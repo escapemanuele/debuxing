@@ -93,7 +93,6 @@ module.exports = {
         cookies: {},
         verboseOutput: false,
         perPage: 100,
-        // Search and Replace Urls across WordPress content.
         //searchAndReplaceContentUrls: {
           //sourceUrl: "http://debuxing.tx7.fcomet.com/",
           //replacementUrl: "https://localhost:8000/",
