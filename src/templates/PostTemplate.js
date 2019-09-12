@@ -11,7 +11,9 @@ import LeaveComment from '../components/Globals/LeaveComment'
 const PostTemplate = ({data}) => {
 
     const getSlugFromUrl = (address) => {
+        console.log("ADDRESS", address)
         const url = new URL(address)
+        console.log("AHAHAHAH", url.pathname)
         return url.pathname
     }
 
@@ -96,7 +98,7 @@ const PostWrapper = styled.div`
 
         .codecolorer-container {
             white-space: nowrap;
-            width:100%;
+            width:100%!important;
             background-color: ${styles.codeColorer.codeColorerBackground};
             border: ${styles.codeColorer.codeColorerBorder};
             margin-top: 2rem;

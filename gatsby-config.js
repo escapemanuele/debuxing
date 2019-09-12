@@ -53,7 +53,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        baseUrl: "debuxing.com",
+        baseUrl: process.env.GATSBY_WORDPRESS_BASE_URL,
         protocol: "http",
         hostingWPCOM: false,
         // If useACF is true, then the source plugin will try to import the Wordpress ACF Plugin contents.
@@ -95,8 +95,8 @@ module.exports = {
         perPage: 100,
         // Search and Replace Urls across WordPress content.
         searchAndReplaceContentUrls: {
-          sourceUrl: "https://admin-debuxing.000webhostapp.com",
-          replacementUrl: "https://localhost:8000",
+          sourceUrl: "http://debuxing.tx7.fcomet.com/",
+          replacementUrl: "https://localhost:8000/",
         },
         concurrentRequests: 10,
         // Set WP REST API routes whitelists

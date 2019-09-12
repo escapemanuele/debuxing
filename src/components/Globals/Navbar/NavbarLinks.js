@@ -5,7 +5,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const NavbarLinks = ({navbarOpen}) => {
 
-    const [links, setLinks] = useState(menuLinks)
+    const [links] = useState(menuLinks)
 
     return (
         <LinkWrapper open={navbarOpen}>

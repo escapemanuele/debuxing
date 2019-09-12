@@ -8,7 +8,7 @@ import styled from 'styled-components'
 const Blog = ({data}) => {
 
 
-    const [items, setItems] = useState(data.posts.edges)
+    const [items] = useState(data.posts.edges)
     const [posts, setPosts] = useState(data.posts.edges)
     const [categories, setCategories] = useState([])
     const [currentCategory, setCurrentCategory] = useState('All')
