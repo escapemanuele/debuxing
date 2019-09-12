@@ -11,9 +11,7 @@ import LeaveComment from '../components/Globals/LeaveComment'
 const PostTemplate = ({data}) => {
 
     const getSlugFromUrl = (address) => {
-        console.log("ADDRESS", address)
         const url = new URL(address)
-        console.log("AHAHAHAH", url.pathname)
         return url.pathname
     }
 
@@ -118,7 +116,7 @@ const PostWrapper = styled.div`
             height: auto;
         }
 
-        @media (${styles.device.tablet}) {
+        @media (min-width:${styles.size.tablet}) {
             .aligncenter {
                 margin: auto;
                 margin-top: 2rem;

@@ -89,6 +89,16 @@ module.exports = {
           jwt_pass: process.env.JWT_PASSWORD,
           jwt_base_path: "/jwt-auth/v1/token", // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
         },
+        plugins: [
+          {
+            resolve: `gatsby-wordpress-inline-images`,
+            options: {
+              baseUrl: process.env.GATSBY_WORDPRESS_BASE_URL,
+              protocol: `http`,
+              maxWidth: 650
+            }
+          }
+        ],
         // Set cookies that should be send with requests to wordpress as key value pairs
         cookies: {},
         verboseOutput: false,
