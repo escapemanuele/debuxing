@@ -5,7 +5,7 @@ import { FaArrowDown } from 'react-icons/fa'
 
 const AffiliateText = (link) => (
   <AffiliateWrapper>
-    <a href="https://www.siteground.com/go/debuxing">
+    <a title="We recommend SiteGround for your hosting"  href="https://www.siteground.com/go/debuxing">
       <p>
         Ready to host your new project?<br/>
       </p>
