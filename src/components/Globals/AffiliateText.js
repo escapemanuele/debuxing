@@ -11,7 +11,7 @@ const AffiliateText = (link) => (
     <FaArrowRight className="arrow-right" />
     <FaArrowDown className="arrow-down" />
     <a className="affiliate_link" href="https://www.siteground.com/go/debuxing">
-      SITEGROUND
+      SITEGROUND 
     </a>
   </AffiliateWrapper>
 );
