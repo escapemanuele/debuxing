@@ -12,6 +12,23 @@ module.exports = {
     siteUrl: `https://www.debuxing.com`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Debuxing`,
+        short_name: `debuxing`,
+        description: `The answer to your programming questions`,
+        lang: `en`,
+        start_url: `/`,
+        background_color: `#000`,
+        theme_color: `#1a9cfc`,
+        display: `minimal-ui`,
+        icon: `src/images/debuxing-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
@@ -37,18 +54,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/debuxing-icon.png`, // This path is relative to the root of the site.
-      },
-    },
     `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-source-wordpress",
@@ -138,9 +143,7 @@ module.exports = {
           return entities
         },
       },
-    }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    },
+    
   ],
 }
