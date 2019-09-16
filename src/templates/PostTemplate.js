@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import {DiscussionEmbed} from 'disqus-react'
 import LeaveComment from '../components/Globals/LeaveComment'
+import AffiliateText from '../components/Globals/AffiliateText';
 
 const PostTemplate = ({data}) => {
 
@@ -33,11 +34,16 @@ const PostTemplate = ({data}) => {
                         <AniLink fade to="/blog" className="btn back">Back to articles</AniLink>
                     </div>
                     <Title title={data.post.title} className="title" />
+                    <AffiliateText />
                     <div className="content" dangerouslySetInnerHTML={{ __html: data.post.content}} />
                     <LeaveComment />
                     <DiscussionEmbed className="disqus-board" {...disqusConfig} />
                 </PostWrapper>
                 <AsideWrapper>
+                    <h3>Hosting</h3>
+                    <a className="btn aside-related" href="https://www.siteground.com/go/debuxing">
+                        Start your new project with SiteGround
+                    </a>
                     <h3>Related</h3>
                     {
                         data.post.jetpack_related_posts.map((related,index) => {
