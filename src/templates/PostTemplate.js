@@ -98,6 +98,10 @@ const PostWrapper = styled.div`
         margin-top: 2rem;
     }
 
+    #toc_container {
+            display: none;
+        }
+
     .content {
         margin-top: 3rem;
 
@@ -128,9 +132,7 @@ const PostWrapper = styled.div`
             margin: 1rem auto 1rem auto;
         }
 
-        #toc_container {
-            display: none;
-        }
+        
 
         @media (min-width:${styles.size.tablet}) {
             .aligncenter {
