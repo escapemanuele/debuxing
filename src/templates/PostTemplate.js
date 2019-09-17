@@ -128,6 +128,10 @@ const PostWrapper = styled.div`
             margin: 1rem auto 1rem auto;
         }
 
+        .toc_container {
+            display: none;
+        }
+
         @media (min-width:${styles.size.tablet}) {
             .aligncenter {
                 margin: auto;
