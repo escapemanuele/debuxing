@@ -36,6 +36,7 @@ const PostTemplate = ({data}) => {
                     <Title title={data.post.title} className="title" />
                     <AffiliateText />
                     <div className="content" dangerouslySetInnerHTML={{ __html: data.post.content}} />
+                    <AffiliateText />
                     <LeaveComment />
                     <DiscussionEmbed className="disqus-board" {...disqusConfig} />
                 </PostWrapper>
@@ -120,6 +121,11 @@ const PostWrapper = styled.div`
             margin: 0;
             max-width: 100%;
             height: auto;
+        }
+
+        .gatsby-image-wrapper {
+            max-width: 60%!important;
+            margin: 1rem auto 1rem auto;
         }
 
         @media (min-width:${styles.size.tablet}) {
