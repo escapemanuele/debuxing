@@ -128,7 +128,7 @@ const PostWrapper = styled.div`
             margin: 1rem auto 1rem auto;
         }
 
-        .toc_container {
+        #toc_container {
             display: none;
         }
 
