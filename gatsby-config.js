@@ -53,6 +53,19 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-cookiehub`,
+      options: {
+        // your cookiehub widget ID
+        cookihubId: `973edacd`,
+        // your google analytics tracking id
+        trackingId: `UA-26365288-11`,
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // enable ip anonymization
+        anonymize: true,        
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
     {
