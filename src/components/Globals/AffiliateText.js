@@ -27,8 +27,9 @@ const AffiliateWrapper = styled.div`
   
   margin-left: auto;
   margin-right: auto;
-  color: ${styles.colors.mainBlack};
-  ${styles.border({color: `${styles.colors.mainBlue}`})};
+  
+  ${styles.border({color: `${styles.colors.mainBlack}`})};
+  background: ${styles.colors.mainBlue};
 
   a {
     display: block;
@@ -37,13 +38,15 @@ const AffiliateWrapper = styled.div`
     font-size: 1.2rem;
     font-weight: 700;
     ${styles.transDefault};
+    color: ${styles.colors.mainWhite};
 
     &:hover {
-      background: ${styles.colors.mainBlue};
+      background: ${styles.colors.mainWhite};
+      color: ${styles.colors.mainBlack};
 
       .affiliate_link {
-        color: ${styles.colors.mainWhite};
-        font-size: 1.8rem;
+        color: ${styles.colors.mainBlue};
+        font-size: 2.4rem;
       }
     }
   }
@@ -53,12 +56,17 @@ const AffiliateWrapper = styled.div`
     align-items: center;
     font-weight: 900;
     font-size: 1.6rem;
-    color: ${styles.colors.mainBlue};
+    color: ${styles.colors.mainBlack};
     ${styles.transDefault};
+    
   }
 
    @media(min-width: ${styles.size.tablet}) {
       width: 40vw;
+
+      .affiliate_link {
+        margin-top: 0.8rem;
+      }
    }
 
 `
