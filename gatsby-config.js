@@ -59,7 +59,7 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         baseUrl: process.env.GATSBY_WORDPRESS_BASE_URL,
-        protocol: "http",
+        protocol: "https",
         hostingWPCOM: false,
         // If useACF is true, then the source plugin will try to import the Wordpress ACF Plugin contents.
         useACF: false,
