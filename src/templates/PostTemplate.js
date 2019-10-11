@@ -45,18 +45,17 @@ const PostTemplate = ({data}) => {
                     <a className="btn aside-related" href="https://www.siteground.com/go/debuxing">
                         Start your new project with SiteGround
                     </a>
-                    <h3>Related</h3>
-                    {
+                    {/*<h3>Related</h3>
+                    {data.posts.jetpack_related_posts &&
                         data.post.jetpack_related_posts.map((related,index) => {
                             const slug = getSlugFromUrl(related.url)
-                            console.log(slug)
                             return (
                                 <AniLink className="btn aside-related" key={index} fade to={slug}>
                                     {related.title}
                                 </AniLink>
                             )
                         })
-                    }
+                    }*/}
                 </AsideWrapper>
             </SectionSidebar>
         </Layout>
@@ -169,10 +168,10 @@ export const query = graphql`
             author {
                 name
             }
-            jetpack_related_posts {
-                title
-                url
-            }
+            # jetpack_related_posts {
+            #     title
+            #     url
+            # }
         }
         background:file(relativePath:{eq:"bcg/cover-debuxing.jpg"}) {
             childImageSharp {
