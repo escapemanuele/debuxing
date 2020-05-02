@@ -3,6 +3,9 @@ import PropTypes from "prop-types"
 import {createGlobalStyle} from 'styled-components'
 import Navbar from "../components/Globals/Navbar/Navbar";
 import {styles} from '../utils'
+import CookieConsent from "react-cookie-consent";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+import Footer from "./Globals/Footer";
 
 const Layout = ({children}) => {
 
@@ -11,6 +14,14 @@ const Layout = ({children}) => {
       <GlobalStyle />
       <Navbar />
       {children}
+      <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          declineButtonText="Decline"
+          cookieName="gatsby-gdpr-google-tagmanager">
+        By using our site, you acknowledge that you have read and understand our <AniLink fade to="/privacy-policy">Privacy Policy</AniLink>.
+    </CookieConsent>
+    <Footer />
     </React.Fragment>
   )
 }
