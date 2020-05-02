@@ -10,12 +10,6 @@ import LeaveComment from '../components/Globals/LeaveComment'
 import AffiliateText from '../components/Globals/AffiliateText';
 
 const PostTemplate = ({data}) => {
-
-    const getSlugFromUrl = (address) => {
-        const url = new URL(address)
-        return url.pathname
-    }
-
     const disqusConfig = {
         shortname: process.env.GATSBY_DISQUS_NAME,
         config: {identifier: data.post.slug}
@@ -28,36 +22,15 @@ const PostTemplate = ({data}) => {
             <Header img={data.background.childImageSharp.fluid}>
                 <Banner title={data.post.title} />
             </Header>
-            <SectionSidebar>
-                <PostWrapper className="item-content">
-                    <div className="back_container">
-                        <AniLink fade to="/blog" className="btn back">Back to articles</AniLink>
-                    </div>
-                    <Title title={data.post.title} className="title" />
-                    <AffiliateText />
-                    <div className="content" dangerouslySetInnerHTML={{ __html: data.post.content}} />
-                    <AffiliateText />
-                    <LeaveComment />
-                    <DiscussionEmbed className="disqus-board" {...disqusConfig} />
-                </PostWrapper>
-                <AsideWrapper>
-                    <h3>Hosting</h3>
-                    <a className="btn aside-related" href="https://www.siteground.com/go/debuxing">
-                        Start your new project with SiteGround
-                    </a>
-                    {/*<h3>Related</h3>
-                    {data.posts.jetpack_related_posts &&
-                        data.post.jetpack_related_posts.map((related,index) => {
-                            const slug = getSlugFromUrl(related.url)
-                            return (
-                                <AniLink className="btn aside-related" key={index} fade to={slug}>
-                                    {related.title}
-                                </AniLink>
-                            )
-                        })
-                    }*/}
-                </AsideWrapper>
-            </SectionSidebar>
+            <PostWrapper className="item-content">
+                <div className="back_container">
+                    <AniLink fade to="/blog" className="btn back">Back to articles</AniLink>
+                </div>
+                <Title title={data.post.title} className="title" />
+                <div className="content" dangerouslySetInnerHTML={{ __html: data.post.content}} />
+                <LeaveComment />
+                <DiscussionEmbed className="disqus-board" {...disqusConfig} />
+            </PostWrapper>
         </Layout>
     )
 }
@@ -68,8 +41,10 @@ const PostWrapper = styled.div`
 
     background: ${styles.colors.mainWhite};
     color: ${styles.colors.mainBlack};
+    margin: 0 auto;
     padding: 2rem;
     overflow: hidden;
+    width: 90%;
 
     .back_container {
         text-align: center;
