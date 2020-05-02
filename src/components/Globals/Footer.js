@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import {styles} from '../../utils'
 import {FaInstagram, FaTwitter, FaFacebook} from 'react-icons/fa'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Footer = () => {
 
@@ -9,8 +10,11 @@ const Footer = () => {
 
     return (
         <FooterWrapper>
-            <div className="title">eatery</div>
-            <div className="icons">
+            <div className="title">Debuxing</div>
+            <div className="links">
+                <AniLink fade to="/privacy-policy">Privacy Policy</AniLink>
+            </div>
+            {/* <div className="icons">
             {
                 icons.map(icon => {
                     return (
@@ -20,7 +24,7 @@ const Footer = () => {
                     )
                 })
             }
-            </div>
+            </div> */}
             <p className="copyright">copyright &copy; {new Date().getFullYear()}</p>
         </FooterWrapper>
     )
@@ -34,12 +38,26 @@ const FooterWrapper = styled.footer`
     .title {
         text-align: center;
         width: 10rem;
-        color: ${styles.colors.mainYellow};
+        color: ${styles.colors.mainWhite};
         text-transform: uppercase;
         padding: 0.3rem 1rem;
         margin: 0 auto 2rem auto;
         font-size: 1.5rem;
-        ${styles.border({color:`${styles.colors.mainYellow}`})};
+        ${styles.border({color:`${styles.colors.mainBlue}`})};
+    }
+
+    .links {
+        display: block;
+        text-align: center;
+
+        a {
+            color: ${styles.colors.mainWhite};
+            margin-left: 1rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     .icons {

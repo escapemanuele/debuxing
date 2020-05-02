@@ -9,7 +9,7 @@ module.exports = {
     title: `Debuxing`,
     description: `Debuxing: The answer to your programming problems`,
     author: `@escapemanuele`,
-    siteUrl: `https://www.debuxing.com`,
+    siteUrl: `https://debuxing.com`,
   },
   plugins: [
     {
@@ -30,6 +30,23 @@ module.exports = {
       resolve: `gatsby-plugin-google-adsense`,
       options: {
         publisherId: process.env.GOOGLE_ADSENSE
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        // googleAnalytics: {
+        //   trackingId: process.env.GOOGLE_ANALYTICS, // leave empty if you want to disable the tracker
+        //   cookieName: 'gatsby-gdpr-google-analytics', // default
+        //   anonymize: true // default
+        // },
+        googleTagManager: {
+          trackingId: process.env.GOOGLE_TAG_MANAGER, // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-tagmanager', // default
+          dataLayerName: 'dataLayer', // default
+        },
+        // Defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development']
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
